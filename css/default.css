@@ -1,0 +1,209 @@
+@charset 'utf-8';
+
+    /* base style */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+    .clearfix:after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+    :root{
+        font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #666;
+    }
+    .sec{
+        margin-bottom: 36px;
+    }
+    .container{
+        width: 960px;
+        margin: 0 auto;
+        padding: 12px;
+    }
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 12px;
+        row-gap: 24px;
+    }
+
+    /* skip-menu style */
+    /* skip-menu는 웹 접근성때문에 만들기 때문에 보이지 않아도 됨 */
+    .skip-menu a{
+        display: block;
+        /* padding: 12px; */
+        background-color: #666;
+        font-weight: 900;
+        font-size: 32px;
+        color: #fff;
+        text-align: center;
+
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+    .skip-menu a:focus{
+        width: auto;
+        height: auto;
+        padding: 12px;
+    }
+
+    /* wrapper style */
+    .wrap{
+        overflow: hidden;
+    }
+
+    /* header style */
+    .header{
+        border-bottom: 2px solid #ba000c;
+    }
+    .header .container{
+        padding-bottom: 0;
+    }
+    h1{
+        order: 2;
+        grid-column: 5/9;
+        display: flex;
+        justify-content: center;
+    }
+    h1 strong{
+        display: block;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+    h1 .img-box{
+        width:66px;
+    }
+    .quick-nav01{
+        order: 1;
+        grid-column: 1/5;
+    }
+    /*
+        nav엘리먼트에서 클래스이름이 quick가 포함되면 
+
+        nav[class*='quick']
+
+        */
+    .quick-nav01 ul{
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+    }
+    .quick-nav01 ul li{
+        margin-right: 1em;
+    }
+    .quick-nav01 a{
+        font-weight: 700;
+        font-size: 14px;
+        color: #000;
+    }
+    .quick-nav01 li:first-child a{
+        color: #ba000c;
+    }
+    .quick-nav01 li:last-child:hover a, .quick-nav01 li:nth-child(2):hover a{
+        color: #ba000c;
+    }
+
+    .quick-nav02{
+        order: 3;
+        grid-column: 9/14;
+    }
+    .quick-nav02 ul{
+        display: flex;
+    }
+    .quick-nav02 ul li{
+        margin-left: 1em;
+        font-size: 12px;
+    }
+    .quick-nav02 li:nth-child(4) a{
+        display: block;
+        margin-top: 3px;
+    }
+    .main-nav{
+        order: 4;
+        grid-column: 1/13;
+    }
+    /* 
+    들어가는 내용이 긴 글이든 짧은 글이든 균등하게 놓고 싶으면
+    grid 보다는 flex가 낫다.
+    */
+    .main-nav ul{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        
+    }
+    .main-nav a{
+        padding: 12px 12px 6px 12px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+    }
+    .main-nav a span:first-child{
+        font-weight: 700;
+        font-size: 20px;
+        color: #333;
+        transition: 0.3s 0.1s;
+    }
+    .main-nav a span:last-child{
+        font-size: 12px;
+        color: transparent;
+        opacity: 0;
+        transition: 0.3s 0.15s;
+    }
+    .main-nav a:hover{
+        background-color: #ba000c;
+    }
+    .main-nav a:hover span{
+        color: #fff;
+        opacity: 1;
+    }
+
+    /*line style */
+    .line .contents{
+        height: 2px;
+        background-color: #ba000c;
+        text-indent: -999999px;
+    }
+
+    /* footer style */
+    .footer{
+        background-color: #ba000c;
+    }
+
+    .footer .container{
+        padding: 36px 12px;
+    }
+    .footer-nav ul{
+        display: flex;
+    }
+    /* 줄 높이를 설정하려면 li의 가상 요소를 만들어서 position 넣어서 설정할 수 있다. */
+    .footer-nav li{
+        border-right: 1px solid #fff;
+        padding: 0 10px;
+        color: #fff;
+    }
+    .footer-nav li:first-child{
+        padding-left: 0;
+    }
+    .footer-nav li:last-child{
+        border-right: none;
+    }
+    .footer-nav li:hover{
+        text-decoration: underline;
+    }
+
+    .footer address{
+        margin-top: 23px;
+        
+        color: #ccc;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 11px;
+    }
+
+    
